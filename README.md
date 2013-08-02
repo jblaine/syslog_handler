@@ -12,38 +12,25 @@ Aug  2 17:04:05 mtclic chef[13072]: status=success total_resources=171 updated_r
 Attributes
 ----------
 
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['chef_client']['handler']['syslog']['identity']</tt></td>
-    <td>String</td>
-    <td>Syslog lines show as this identity</td>
-    <td><tt>chef</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['chef_client']['handler']['syslog']['facility']</tt></td>
-    <td>Ruby variable (constant from Syslog::Constants)</td>
-    <td>Syslog as this syslog facility</td>
-    <td><tt>Syslog::LOG_DAEMON</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['chef_client']['handler']['syslog']['fail_priority']</tt></td>
-    <td>Ruby variable (constant from Syslog::Constants)</td>
-    <td>Syslog as this priority on Chef run failure</td>
-    <td><tt>Syslog::LOG_ERR</tt></td>
-  </tr>
-  <tr>
-    <td><tt>['chef_client']['handler']['syslog']['success_priority']</tt></td>
-    <td>Ruby variable (constant from Syslog::Constants)</td>
-    <td>Syslog as this priority on Chef run success</td>
-    <td><tt>Syslog::LOG_INFO</tt></td>
-  </tr>
-</table>
+* ['chef_client']['handler']['syslog']['identity']
+Syslog lines show as this identity
+Type: String
+Defaut: 'chef'
+
+* ['chef_client']['handler']['syslog']['facility']
+Syslog as this syslog facility
+Type: Ruby variable (constant from `Syslog::Constants`)
+Default: `Syslog::LOG_DAEMON`
+
+* ['chef_client']['handler']['syslog']['fail_priority']
+Syslog as this priority on Chef run failure
+Type: Ruby variable (constant from `Syslog::Constants`)
+Default: `Syslog::LOG_ERR`
+
+* ['chef_client']['handler']['syslog']['success_priority']
+Syslog as this priority on Chef run success
+Type: Ruby variable (constant from `Syslog::Constants`)
+Default: `Syslog::LOG_INFO`
 
 Usage
 -----
