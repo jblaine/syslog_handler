@@ -1,24 +1,17 @@
 syslog_handler Cookbook
 =======================
-TODO: Enter the cookbook description here.
 
-e.g.
-This cookbook makes your favorite breakfast sandwhich.
+Report and Error handler for Opscode Chef to log the basic essential information.
 
-Requirements
-------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
+Example output from an example syslog log file:
 
-e.g.
-#### packages
-- `toaster` - syslog_handler needs toaster to brown your bagel.
+```
+Aug  2 17:04:05 mtclic chef[13072]: status=success total_resources=171 updated_resources=6 elapsed_time=117.646907 
+```
 
 Attributes
 ----------
-TODO: List you cookbook attributes here.
 
-e.g.
-#### syslog_handler::default
 <table>
   <tr>
     <th>Key</th>
@@ -27,20 +20,35 @@ e.g.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['syslog_handler']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['chef_client']['handler']['syslog']['identity']</tt></td>
+    <td>String</td>
+    <td>Syslog lines show as this identity</td>
+    <td><tt>chef</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['chef_client']['handler']['syslog']['facility']</tt></td>
+    <td>Ruby variable (constant from Syslog::Constants)</td>
+    <td>Syslog as this syslog facility</td>
+    <td><tt>Syslog::LOG_DAEMON</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['chef_client']['handler']['syslog']['fail_priority']</tt></td>
+    <td>Ruby variable (constant from Syslog::Constants)</td>
+    <td>Syslog as this priority on Chef run failure</td>
+    <td><tt>Syslog::LOG_ERR</tt></td>
+  </tr>
+  <tr>
+    <td><tt>['chef_client']['handler']['syslog']['success_priority']</tt></td>
+    <td>Ruby variable (constant from Syslog::Constants)</td>
+    <td>Syslog as this priority on Chef run success</td>
+    <td><tt>Syslog::LOG_INFO</tt></td>
   </tr>
 </table>
 
 Usage
 -----
-#### syslog_handler::default
-TODO: Write usage instructions for each cookbook.
 
-e.g.
-Just include `syslog_handler` in your node's `run_list`:
+Just include `syslog_handler` very early (if not first) in your node's `run_list`:
 
 ```json
 {
@@ -53,16 +61,32 @@ Just include `syslog_handler` in your node's `run_list`:
 
 Contributing
 ------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
 
-e.g.
 1. Fork the repository on Github
 2. Create a named feature branch (like `add_component_x`)
-3. Write you change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
+3. Write your change
+4. Submit a Pull Request using Github
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+
+The MIT License (MIT)
+
+Copyright (c) 2013 Charles J Blaine
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
