@@ -12,25 +12,13 @@ Aug  2 17:04:05 mtclic chef[13072]: status=success total_resources=171 updated_r
 Attributes
 ----------
 
-* ['chef_client']['handler']['syslog']['identity']
-Syslog lines show as this identity
-Type: String
-Defaut: 'chef'
+* `['chef_client']['handler']['syslog']['identity']` : Syslog lines show as this identity. Type: String. Defaut: `'chef'`.
 
-* ['chef_client']['handler']['syslog']['facility']
-Syslog as this syslog facility
-Type: Ruby variable (constant from `Syslog::Constants`)
-Default: `Syslog::LOG_DAEMON`
+* `['chef_client']['handler']['syslog']['facility']` : Syslog under this syslog facility. Type: Ruby variable (constant from `Syslog::Constants`). Default: `Syslog::LOG_DAEMON`
 
-* ['chef_client']['handler']['syslog']['fail_priority']
-Syslog as this priority on Chef run failure
-Type: Ruby variable (constant from `Syslog::Constants`)
-Default: `Syslog::LOG_ERR`
+* ['chef_client']['handler']['syslog']['fail_priority'] : Syslog as this priority on Chef run failure.  Type: Ruby variable (constant from `Syslog::Constants`). Default: `Syslog::LOG_ERR`
 
-* ['chef_client']['handler']['syslog']['success_priority']
-Syslog as this priority on Chef run success
-Type: Ruby variable (constant from `Syslog::Constants`)
-Default: `Syslog::LOG_INFO`
+* ['chef_client']['handler']['syslog']['success_priority'] : Syslog as this priority on Chef run success. Type: Ruby variable (constant from `Syslog::Constants`). Default: `Syslog::LOG_INFO`
 
 Usage
 -----
