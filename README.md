@@ -5,8 +5,9 @@ Report and Error handler for Opscode Chef to log the basic essential information
 
 Example output from an example syslog log file:
 
-`Aug  2 17:04:05 web33-x9 chef[13072]: status=success total_resources=171
-updated_resources=6 elapsed_time=117.646907`
+```
+Aug  2 17:04:05 web33-x9 chef[13072]: status=success total_resources=171 updated_resources=6 elapsed_time=117.646907
+```
 
 Attributes
 ----------
