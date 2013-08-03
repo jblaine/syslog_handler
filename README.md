@@ -11,6 +11,11 @@ Aug  2 17:04:05 web33-x9 chef[13072]: status=success total_resources=171 updated
 
 Based roughly on the `graphite_handler` code from Ian Meyer, Peter Donald, et al.
 
+Requirements
+------------
+
+As usual for handlers, the [chef_handler](http://community.opscode.com/cookbooks/chef_handler) cookbook is mandatory (it must be able to be referenced, so in the Chef Server case, it must be uploaded to the server).
+
 Attributes
 ----------
 
