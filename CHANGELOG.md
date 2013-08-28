@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of syslog_handler.
 
+## 0.1.2:
+
+* Added 'supports' and 'depends' data to metadata.rb
+
 ## 0.1.1:
 
 * Typo in syslog priority variable
