@@ -2,6 +2,10 @@
 
 This file is used to list changes made in each version of syslog_handler.
 
+## 0.1.1:
+
+* Typo in syslog priority variable
+
 ## 0.1.0:
 
 * Initial release of syslog_handler
