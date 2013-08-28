@@ -4,7 +4,7 @@ require 'chef/handler'
 require 'syslog'
 
 class SyslogReporting < Chef::Handler
-  attr_writer :identity, :facility, :fail_priority, :success_proirity
+  attr_writer :identity, :facility, :fail_priority, :success_priority
 
   def initialize(options = {})
     @identity = options[:identity]
