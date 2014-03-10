@@ -14,5 +14,5 @@ chef_handler 'SyslogReporting' do
               :success_priority => node['chef_client']['handler']['syslog']['success_priority'],
             ]
   supports :report => true, :exception => true
-  action :enable
+  action :nothing
 end.run_action(:enable)
