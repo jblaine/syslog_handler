@@ -17,20 +17,20 @@ class SyslogReporting < Chef::Handler
     if run_status.success?
       status = "success"
       priority = @spriority
-      extra = ""
+      status_msg = "total_resources=#{run_status.all_resources.length} updated_resources=#{run_status.updated_resources.length} elapsed_time=#{run_status.elapsed_time}"
     else
       status = "failure"
       priority = @fpriority
-      extra = " exception='#{run_status.exception}'"
+      status_msg = "exception='#{run_status.exception}'"
     end
 
     Syslog.open(@identity, nil, @facility) unless Syslog.opened?
     begin
-      logline = "status=#{status} total_resources=#{run_status.all_resources.length} updated_resources=#{run_status.updated_resources.length} elapsed_time=#{run_status.elapsed_time}#{extra}"
+      logline = "status=#{status} #{status_msg}"
       Syslog.log(priority, logline)
       Syslog.close
     rescue => e
-      Chef::Log.error("Error reporting to syslog")
+      Chef::Log.error("Error reporting to syslog- #{e}")
     end
   end
 
