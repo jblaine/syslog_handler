@@ -2,6 +2,11 @@
 
 This file is used to list changes made in each version of syslog_handler.
 
+## 0.1.4:
+
+* Syslog exception info when there's a failure
+* Log exception info when there's a Syslog failure
+
 ## 0.1.3:
 
 * Use 'action :nothing' for the resource declaration in the default recipe so as to not trigger the resource enabling twice. It happens already as part of the end.run_action()
