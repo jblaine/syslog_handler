@@ -1,3 +1,5 @@
+return if node['platform'] == 'windows'
+
 # Yes, a require in an attributes file. This gives us
 # the Syslog constants like Syslog::LOG_DAEMON, etc
 require 'syslog'
