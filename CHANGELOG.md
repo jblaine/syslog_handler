@@ -2,7 +2,7 @@
 
 This file is used to list changes made in each version of syslog_handler.
 
-## 0.1.7:
+## 0.1.8:
 
 * Don't require the syslog module on Windows
 
